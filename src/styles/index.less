@@ -1,0 +1,58 @@
+// Global
+
+@import "variables";
+
+
+// Bootstrap
+
+@import "~bootstrap/less/variables";
+@import "bootstrap/variables";
+
+@import "~bootstrap/less/mixins";
+
+@import "~bootstrap/less/normalize";
+
+@import "~bootstrap/less/scaffolding";
+
+@import "~bootstrap/less/type";
+@import "bootstrap/type";
+
+@import "~bootstrap/less/grid";
+
+@import "~bootstrap/less/buttons";
+@import "~bootstrap/less/button-groups";
+@import "~bootstrap/less/input-groups";
+@import "~bootstrap/less/tables";
+@import "~bootstrap/less/forms";
+@import "~bootstrap/less/navbar";
+@import "~bootstrap/less/navs";
+
+
+// Font Awesome
+
+@import "~font-awesome/less/font-awesome";
+@import "~react-select/dist/react-select.css";
+
+
+.clearfix {
+    .clearfix();
+}
+
+.md-img {
+    width: 250px;
+    height: 200px;
+}
+
+.img-right {
+    &:extend(.md-img);
+    float: right;
+    margin-left: 15px;
+    margin-bottom: 10px;
+}
+
+.img-left {
+    &:extend(.md-img);
+    float: left;
+    margin-right: 15px;
+    margin-bottom: 10px;
+}

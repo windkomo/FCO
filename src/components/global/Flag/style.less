@@ -1,0 +1,21 @@
+.flag {
+    width: 16px;
+    height: 11px;
+    display: inline-block;
+    background: url('../assets/images/flags.png') no-repeat;
+}
+
+.flag-eu {
+    composes: flag;
+    background-position: -16px 0;
+}
+
+.flag-jp {
+    composes: flag;
+    background-position: 0 -11px;
+}
+
+.flag-us {
+    composes: flag;
+    background-position: -16px -11px;
+}

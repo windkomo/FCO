@@ -1,0 +1,26 @@
+.container {
+    text-align: center;
+}
+
+.link {
+    height: 50px;
+    font-size: 0.9em;
+    background-color: #e0e0e0;
+    color: #484848;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-radius: 0;
+
+    transition: all 0.5s ease;
+
+    &:hover {
+        background-color: rgb(228, 65, 34);
+        color: white;
+    }
+}
+
+.active {
+    composes: link;
+    background-color: rgb(228, 65, 34);
+    color: white;
+}

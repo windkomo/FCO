@@ -1,0 +1,30 @@
+@import "~bootstrap/less/variables";
+
+//// Global Styles ////
+
+.content {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 50px;
+    bottom: 0;
+    left: 250px;
+    background-color: #F1F2F7;
+
+    transition: all 0.3s ease;
+
+    @media (max-width: @screen-xs-max) {
+        left: 250px;
+        width: 100%;
+    }
+}
+
+.content-larger {
+    @media (min-width: @screen-sm-min) {
+        left: 50px
+    }
+
+    @media (max-width: @screen-xs-max) {
+        left: 0px;
+    }
+}

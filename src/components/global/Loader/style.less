@@ -1,0 +1,30 @@
+.loader {
+    display: block;
+    margin: 0 auto;
+    width: 44px;
+    height: 44px;
+    z-index: 1;
+    animation: spin 2s linear infinite;
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+
+    img {
+        width: 44px;
+        height: 44px;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    composes: loader;
+    opacity: 1;
+}

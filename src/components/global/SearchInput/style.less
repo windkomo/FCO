@@ -1,0 +1,22 @@
+.search {
+    height: 35px;
+
+    &:hover {
+        outline: none;
+        border-color: lighten(rgb(228, 65, 34), 20%);
+    }
+
+    &:focus {
+        border-color: lighten(rgb(228, 65, 34), 5%);
+    }
+
+    &::placeholder {
+        font-weight: 300;
+    }
+}
+
+.search-icon {
+    color: white;
+    background-color: rgb(228, 65, 34);
+    border: 1px solid rgb(228, 65, 34);
+}

@@ -1,0 +1,172 @@
+@import "~bootstrap/less/variables";
+
+.menu {
+    position: fixed;
+    background-color: #1A936F;
+    width: 250px;
+    height: 100%;
+    top: 0;
+    z-index: 1;
+    transition: width 0.3s ease;
+}
+
+.menu-minimized {
+    composes: menu;
+    width: 50px;
+
+    @media (max-width: @screen-xs-max) {
+        // display: none;
+        left: -50px;
+    }
+}
+
+.menu-icon {
+    color: #fff;
+    margin-right: 10px;
+}
+
+.main-nav {
+    list-style-type: none;
+    padding: 0;
+
+    .menu-link {
+        padding: 10px 20px 10px 18px;
+        height: 40px;
+    }
+
+    transition: top 0.5s ease;
+}
+
+.main-nav-hidden {
+    composes: main-nav;
+
+    padding: 0;
+    text-align: center;
+
+    .menu-link {
+        height: 40px;
+        width: 50px;
+        line-height: 40px;
+        padding: 0;
+        text-align: center;
+    }
+
+    .menu-icon {
+        color: #fff;
+        margin-right: 0;
+    }
+}
+
+.menu-header {
+    height: 50px;
+}
+
+.nav-toggle {
+    border: 0;
+    background: none;
+    color: #fff;
+    line-height: 50px;
+    padding: 0;
+    text-align: center;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+
+    &:hover {
+        cursor: pointer;
+        color: #eee;
+        outline: none;
+    }
+}
+
+.menu-header-icon {
+    font-size: 16px;
+}
+
+.menu-header-hidden {
+    composes: nav-toggle;
+
+    @media (max-width: @screen-xs-max) {
+        position: absolute;
+        left: 50px;
+
+        .menu-header-icon {
+            color: #82A3B9;
+
+            &:hover {
+                color: darken(#82A3B9, 12%);
+            }
+        }
+    }
+}
+
+.menu-link {
+    display: block;
+    color: #fff;
+    font-weight: 300;
+
+    &:hover {
+        background-color: darken(#1A936F, 12%);
+        text-decoration: none;
+        color: #FFF;
+
+        .menu-icon {
+            color: #FFF;
+        }
+    }
+}
+
+.active-menu-link {
+    color: #FFF;
+    text-decoration: none;
+    position: relative;
+
+    &:not(:hover) {
+        background-color: lighten(#1A936F, 5%);
+    }
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background-color: #00A8B3;
+    }
+
+    .menu-icon {
+        color: #FFF;
+    }
+}
+
+.menu-user-panel {
+    width: 250px;
+    transition: width 0.3s ease;
+}
+
+.menu-user-panel-hidden {
+    width: 50px;
+    transition: width 0.3s ease;
+}
+
+.nav-label {
+    visibility: visible;
+    transition: visibility 0s ease;
+    transition-delay: 200ms;
+}
+
+.nav-label-hidden {
+    visibility: hidden;
+    font-size: 0;
+}
+
+@tooltip-color: #1A936F !important;
+
+.tooltip {
+    background-color: @tooltip-color;
+
+    &:after {
+        border-right-color: @tooltip-color;
+    }
+}

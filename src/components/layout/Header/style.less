@@ -1,0 +1,166 @@
+@import "~bootstrap/less/variables";
+
+.header {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #FFF;
+    height: 50px;
+    left: 250px;
+    z-index: 10;
+    // box-shadow: 0 2px 1px rgba(0, 0, 0, 0.15), -1px 0 0 rgba(0, 0, 0, 0.03), 1px 0 0 rgba(0, 0, 0, 0.03), 0 1px 0 rgba(0, 0, 0, 0.12);
+
+    transition: all 0.3s ease;
+
+    a {
+        list-style-type: none;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .btn-square {
+        @media (max-width: @screen-xs-max) {
+            visibility: hidden;
+        }
+    }
+
+    .container-hidden {
+        @media (max-width: @screen-xs-max) {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: fadeout(#FFF, 20%);
+            visibility: visible;
+            transition: visibility 0.3s ease 0.1s;
+        }
+    }
+}
+
+.header-larger {
+    left: 50px;
+
+    .notifications {
+        @media (max-width: @screen-xs-max) {
+            padding-left: 0px;
+        }
+    }
+
+    @media (max-width: @screen-xs-max) {
+        width: auto;
+        min-width: inherit;
+    }
+
+    .btn-square {
+        @media (max-width: @screen-xs-max) {
+            visibility: visible;
+            transition: visibility 0.3s ease 0.1s;
+        }
+    }
+
+    .container-hidden {
+        display: none;
+    }
+}
+
+.header-smaller {
+    @media (min-width: 481px) {
+        right: 250px;
+    }
+}
+
+.title {
+    margin: 0;
+    font-size: 16px;
+    display: inline-block;
+    line-height: 50px;
+
+    @media (max-width: @screen-xs-max) {
+        display: none;
+    }
+}
+
+.notifications {
+    float: left;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0;
+    line-height: 50px;
+
+    li {
+        display: inline-block;
+
+        &:nth-child(2) {
+            padding-right: 20px;
+            padding-left: 20px;
+        }
+    }
+}
+
+.notifications-icon {
+    color: #8E8E8E;
+
+    &:hover {
+        cursor: pointer;
+        color: #89C437;
+    }
+}
+
+.btn-right {
+    float: right;
+    width: 40px;
+    color: #BDBDBD;
+    text-align: center;
+    line-height: 50px;
+}
+
+.btn-chat {
+    composes: btn-right;
+
+    font-size: 22px;
+
+    &:hover, &.active {
+        color: #F06D54;
+    }
+}
+
+.btn-note {
+    composes: btn-right;
+
+    font-size: 16px;
+
+    &:hover {
+        color: darken(#BDBDBD, 10%);
+    }
+}
+
+.preview {
+    padding: 0 !important;
+    opacity: 1 !important;
+    left: 4px !important;
+    top: 40px !important;
+    color: #5B5B5B !important;
+    pointer-events: auto !important;
+
+    @media (min-width: @screen-sm-min) {
+        position: absolute !important;
+    }
+
+    @media (max-width: @screen-xs-max){
+        bottom: 0;
+        left: 0 !important;
+    }
+
+    &:after {
+        border-bottom-color: #89C437 !important;
+        left: 22px !important;
+
+        @media (max-width: @screen-xs-max) {
+            left: 57px !important;
+        }
+    }
+}

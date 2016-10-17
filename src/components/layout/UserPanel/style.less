@@ -1,0 +1,86 @@
+@import "~bootstrap/less/mixins";
+@import "~bootstrap/less/variables";
+
+.user-panel {
+    display: block;
+    background-color: #1B3449;
+    padding: 5px 20px 5px 18px;
+    margin-bottom: 20px;
+    height: 50px;
+    transition: padding-left 0.3s ease;
+
+    &:hover {
+        text-decoration: none;
+        background-color: #203A50;
+        cursor: pointer;
+    }
+}
+
+.dropdown-icon {
+    color: #FFF;
+    font-size: 12px;
+    float: right;
+    line-height: 40px;
+    visibility: visible;
+    transition: visibility 0s 200ms ease;
+    transition: font 0s 200ms ease;
+}
+
+.user-name {
+    .text-overflow();
+
+    display: inline-block;
+    width: 135px;
+    color: #FFF;
+    font-weight: 300;
+    vertical-align: middle;
+    font-size: 12px;
+    opacity: 1;
+    visibility: visible;
+    transition: visibility 0s 200ms ease;
+}
+
+.user-name-hidden {
+    visibility: hidden;
+    font-size: 0;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 30px;
+    border: 2px solid #FFF;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.user-panel-hidden {
+    composes: user-panel;
+    padding: 6px 5px;
+    transition: padding-left 0.3s ease;
+
+    .user-avatar {
+        margin: 0;
+        width: 38px;
+        height: 38px;
+    }
+
+    .dropdown-icon {
+        visibility: hidden;
+        font-size: 0;
+    }
+
+    @media (max-width: @screen-xs-max) {
+        margin-top: 50px;
+    }
+}
+
+@tooltip-color: #152B39 !important;
+
+.tooltip {
+    background-color: @tooltip-color;
+
+    &:after {
+        border-right-color: @tooltip-color;
+    }
+}

@@ -1,0 +1,21 @@
+.stars {
+    list-style: none;
+    padding-left: 0;
+
+    li {
+        display: inline-block;
+
+        &:not(:last-child) {
+            padding-right: 3px;
+        }
+    }
+}
+
+.star {
+    color: white;
+}
+
+.filled-star {
+    composes: star;
+    color: rgb(228, 65, 34);;
+}
